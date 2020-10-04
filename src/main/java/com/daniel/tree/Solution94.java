@@ -1,4 +1,4 @@
-package com.daniel;
+package com.daniel.tree;
 
 import com.daniel.utils.TreeNode;
 
@@ -19,7 +19,7 @@ public class Solution94 {
         }
 
         Stack<TreeNode> stack = new Stack<>();
-        while (root != null || !stack.isEmpty()) {
+        while (!stack.isEmpty() || root != null) {
             if (root != null) {
                 stack.push(root);
                 root = root.left;
@@ -29,7 +29,6 @@ public class Solution94 {
                 root = root.right;
             }
         }
-
         return resList;
     }
 }

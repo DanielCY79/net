@@ -2,10 +2,9 @@ package com.daniel.sort;
 
 /**
  * @author Daniel Xia
- * @since 2019-07-07 11:16
+ * @since 2020-09-26 08:26
  */
 public class MergeSort {
-
     public int[] sortArray(int[] nums) {
         if (nums == null || nums.length < 2) {
             return nums;
@@ -30,7 +29,7 @@ public class MergeSort {
         int[] help = new int[right - left + 1];
         int index = 0;
         while (p1 <= mid && p2 <= right) {
-            help[index++] = nums[p1] <= nums[p2] ? nums[p1++] : nums[p2++];
+            help[index++] = nums[p1] < nums[p2] ? nums[p1++] : nums[p2++];
         }
         while (p1 <= mid) {
             help[index++] = nums[p1++];
@@ -38,7 +37,6 @@ public class MergeSort {
         while (p2 <= right) {
             help[index++] = nums[p2++];
         }
-
         for (index = 0; index < help.length; index++) {
             nums[left + index] = help[index];
         }

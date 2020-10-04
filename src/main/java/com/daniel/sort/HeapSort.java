@@ -2,30 +2,28 @@ package com.daniel.sort;
 
 /**
  * @author Daniel Xia
- * @since 2019-07-07 14:29
+ * @since 2020-09-26 10:07
  */
 public class HeapSort {
     public int[] sortArray(int[] nums) {
-        return heapSort(nums);
-    }
-
-    public int[] heapSort(int[] nums) {
         if (nums == null || nums.length < 2) {
             return nums;
         }
+        heapSort(nums);
+        return nums;
+    }
 
+    private void heapSort(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             heapInsert(nums, i);
         }
 
         int heapSize = nums.length;
-
         swap(nums, 0, --heapSize);
         while (heapSize > 0) {
             heapify(nums, 0, heapSize);
             swap(nums, 0, --heapSize);
         }
-        return nums;
     }
 
     private void heapify(int[] nums, int i, int heapSize) {
@@ -36,7 +34,7 @@ public class HeapSort {
             if (largest == i) {
                 break;
             }
-            swap(nums, largest, i);
+            swap(nums, i, largest);
             i = largest;
             left = 2 * i + 1;
         }
@@ -50,10 +48,9 @@ public class HeapSort {
     }
 
     private void swap(int[] nums, int i, int j) {
-        int tmp = nums[i];
+        int temp = nums[i];
         nums[i] = nums[j];
-        nums[j] = tmp;
+        nums[j] = temp;
     }
-
 
 }

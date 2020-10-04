@@ -2,7 +2,7 @@ package com.daniel.sort;
 
 /**
  * @author Daniel Xia
- * @since 2019-07-07 10:59
+ * @since 2020-09-26 07:50
  */
 public class QuickSort {
     public int[] sortArray(int[] nums) {
@@ -28,9 +28,9 @@ public class QuickSort {
         int more = right;
         while (left < more) {
             if (nums[left] < nums[right]) {
-                swap(nums, ++less, left++);
+                swap(nums, left++, ++less);
             } else if (nums[left] > nums[right]) {
-                swap(nums, --more, left);
+                swap(nums, left, --more);
             } else {
                 left++;
             }
@@ -40,10 +40,9 @@ public class QuickSort {
     }
 
     private void swap(int[] nums, int i, int j) {
-        int tmp = nums[i];
+        int temp = nums[i];
         nums[i] = nums[j];
-        nums[j] = tmp;
+        nums[j] = temp;
     }
-
 
 }
