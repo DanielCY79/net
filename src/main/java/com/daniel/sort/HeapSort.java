@@ -9,6 +9,7 @@ public class HeapSort {
         if (nums == null || nums.length < 2) {
             return nums;
         }
+
         heapSort(nums);
         return nums;
     }

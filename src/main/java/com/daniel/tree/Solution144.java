@@ -24,6 +24,7 @@ public class Solution144 {
         stack.push(root);
         while (!stack.isEmpty()) {
             root = stack.pop();
+
             resList.add(root.val);
 
             if (root.right != null) {
@@ -33,6 +34,7 @@ public class Solution144 {
                 stack.push(root.left);
             }
         }
+
         return resList;
     }
 

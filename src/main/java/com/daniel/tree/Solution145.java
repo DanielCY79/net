@@ -36,7 +36,6 @@ public class Solution145 {
         while (!bakStack.isEmpty()) {
             resList.add(bakStack.pop());
         }
-
         return resList;
     }
 

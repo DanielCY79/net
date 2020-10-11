@@ -9,7 +9,6 @@ public class MergeSort {
         if (nums == null || nums.length < 2) {
             return nums;
         }
-
         mergeSort(nums, 0, nums.length - 1);
         return nums;
     }
